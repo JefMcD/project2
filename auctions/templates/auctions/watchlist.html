@@ -1,0 +1,74 @@
+{% extends "auctions/layout.html" %}
+{%load static%}
+{% block body %}
+
+
+
+    <section class='auctions-wrapper'>
+ 
+        <div class="main-center-stage">
+
+
+            <div class='active-listings-sidebar'>
+                <div class='watchlist-header'>
+                    <h2>Watchlist</h2>
+                </div>
+                <div class='category-form-wrapper'>
+
+                    <form action="{% url 'auctions:load_watchlist'%}", method='POST' id='listing-search-form'>
+
+                        {% csrf_token %}
+                        {{ listing_states_form.as_div}}
+
+                        <div class='listings-search-btn-flexbox'>
+                            <button class='curtain-btn-wrapper listings-search-btn-wrapper'>
+                                <div class="curtain-btn medium-sq-btn">
+                                    <div class="curtain-btn-hover-state medium-sq-btn" ></div>
+                                    <span>Search</span>
+                                </div>
+                            </button>
+                        </div>
+                    </form>
+                    {{message}}
+                </div>
+
+            </div>
+
+
+
+
+                    <div class='active-listings-wrapper'>
+                            <div class='active-listings-grid'>
+                                {% for watch_item in watchlist %}
+
+                                        <div class='listing-image'>
+                                            <a href="{% url 'auctions:listing_page' watch_item.listing_id %}">
+                                                <img src={{watch_item.image_url}}>
+                                            </a>
+                                        </div>
+
+                                        <div class='listing-info'>
+                                            <div class='list-item title'>
+                                                <a href="{% url 'auctions:listing_page' watch_item.listing_id %}">
+                                                    {{watch_item.title}}
+                                                </a>
+                                            </div>
+
+                                            <div class='list-item description'>Condition: {{watch_item.health_fk.description}}</div>
+                                
+                                            <div class='list-item bid'>High Bid   : ${{ watch_item.highest_bid | floatformat:2 }} </div>
+                                            <div class='list-item date'>Listed End   : {{watch_item.listing_end}}</div>
+                                        </div>
+
+                                {% endfor%}
+                            </div>
+                    </div>
+        </div>
+
+    </section>
+    
+    
+    
+
+
+{% endblock %}

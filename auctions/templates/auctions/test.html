@@ -1,0 +1,24 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+{% block body %}
+<h2>Active Listings</h2>
+
+
+
+        <form class='bid-form' action="{% url 'auctions:process_bid' 3 %}" method='POST' name='listing_page-bidform'>
+            {% csrf_token %}
+            <div class='bid-box'>
+                {{bid_form}}
+                <button class='bid-btn-wrapper'>
+                    <div class="bid-btn">
+                        <div class="bid-btn-hover-state" ></div>
+                        <a href="{% url 'auctions:add_2_watchlist' %}">
+                                <img class='tick' src="{% static 'auctions/img/tick-yellow.svg' %}">   
+                        </a>
+                    </div>
+                </button>
+            </div>
+        </form>
+    
+
+{% endblock %}

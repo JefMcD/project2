@@ -1,0 +1,241 @@
+@font-face {
+    font-family: grotesk;
+    src: url(../fonts/Grotesk/static/FamiljenGrotesk-Medium.ttf);
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: grotesk, Arial, sans-serif;
+    background-color: #000;
+    color: aliceblue;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    height: 100px;
+    padding: 0 30px;
+
+}
+
+.logo {
+    width: 200px;
+}
+
+.logo img {
+    width: 100%;
+    display: block;
+}
+
+.desktop-main-menu {
+    margin-right: 50px;
+
+}
+
+.desktop-main-menu ul {
+    position: relative;
+    display: flex;
+}
+
+.desktop-main-menu ul li {
+    position: relative;
+    margin-right: 1rem;
+    padding-bottom: 2px;
+}
+
+
+/*
+The psuedo element is usually created as an absolute element.
+with no need to define display type. (unless its flex or grid)
+
+By default the inline element will not display while it is empty.
+So if you positon it relative it will not display since inline 
+position does not allow defining the size.
+
+If you change it to block or inline-block and give it some size
+the psuedo element will disolay as a relative position.
+
+The absolute position removes the psuedo element from the 
+normal flow and converts it to an inline-block and its size can be 
+defined and its placement within the parent element. 
+*/
+.desktop-main-menu ul li a::after {
+    content: '';
+    display: block;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+
+    background: #ff8800;
+    transform: scaleX(0);
+    transform-origin: right;
+
+    transition-timing-function: cubic-bezier(.71, .21, 1, 1);
+    transition-duration: 250ms;
+    transition-property: background, transform;
+}
+
+.desktop-main-menu a:hover::after {
+    transform: scaleX(1);
+    background: #fff3d8;
+    transform-origin: left;
+}
+
+
+.section-inner h4 {
+    font-size: 22pt;
+    font-weight: 300;
+
+    margin-bottom: 10px;
+
+    animation: fade-in-up 750ms ease-in-out;
+    animation-delay: 200ms;
+    animation-fill-mode: both;
+}
+
+.section-inner h2 {
+    font-size: 50pt;
+    font-weight: 900;
+
+    margin-bottom: 20px;
+
+    animation: fade-in-up 750ms ease-in-out;
+    animation-delay: 400ms;
+    animation-fill-mode: both;
+
+}
+
+.section {
+    position: relative;
+    height: 100vh;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    text-transform: uppercase;
+}
+
+.section-inner {
+    position: absolute;
+    left: 100px;
+    top: 550px;
+    max-width: 550px
+}
+
+#section-a {
+    background-image: url(../img/section-a.webp)
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+
+    width: 150px;
+    height: 50px;
+
+    border-style: solid;
+    border-color: #7c7c7c;
+    border-width: 3px;
+
+    padding-top: 10px;
+    text-align: center;
+
+    animation: fade-in-up 750ms ease-in-out;
+    animation-delay: 600ms;
+    animation-fill-mode: both;
+
+    cursor: pointer;
+    overflow:hidden;
+    z-index: 2;
+}
+
+.btn span{
+    color:#fff;
+    transition-property: color;
+    transition-timing-function: ease-out;
+    transition-duration: 350ms;
+}
+.btn:hover span {
+    color: #000;
+
+    transition-property: color;
+    transition-timing-function: ease-out;
+    transition-duration: 350ms;
+}
+
+.btn .btn-hover-state {
+    position: absolute;
+    display: inline-block;
+
+    width: 100%;
+    height: 100%;
+
+    top: 100%;
+    left: 0;
+
+    background-color:#fff;
+
+    transform: translateY(0);
+    transition-property: color, transform;
+    transition-timing-function: ease-out;
+    transition-duration: 300ms;
+    transition-delay: 200ms;
+
+    cursor: none;
+    pointer-events: none;
+    z-index: -1;
+
+
+}
+
+.btn:hover .btn-hover-state{
+    transform: translateY(-100%);
+    transition-duration: 500ms;
+
+
+
+    transition-property: color, transform;
+    transition-timing-function: ease-out;
+    transition-duration: 300ms;
+    transition-delay: 200ms;
+
+}
+
+@keyframes fade-in-up{
+    0%{
+        opacity:0;
+        transform:translateY(200%)
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0%)
+    }
+}

@@ -1,0 +1,50 @@
+{% extends  "auctions/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<section class='auctions-wrapper'>
+
+    <div class="main-center-stage">
+        <div class='user-form-wrapper'>
+            <div class='user-title'>
+                <h2>Create Listing</h2>
+            </div>
+
+            <div class='user-form'>
+
+                <form class='general-form' action="{% url 'auctions:create_listing' %}" method="post">
+                    {% csrf_token %}
+                    {{listing_form.as_p}}
+
+                    <datalist id="category_list">
+                        {% for category in categories %}
+                        <option value={{category.description}}>
+                        {% endfor %}
+                    </datalist>
+
+                    <datalist id="conditions_list">
+                        {% for condition in conditions %}
+                        <option value={{condition.description}}>
+                        {% endfor %}
+                    </datalist>
+
+                    <div class='curtain-btn-wrapper create-listing-btn'>
+                        <button class="curtain-btn" >
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>List Item</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class='user-footer'>
+                {% if message %}
+                    <div>{{ message }}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

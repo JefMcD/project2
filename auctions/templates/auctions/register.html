@@ -1,0 +1,43 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+<section class='auctions-wrapper'>
+
+
+    <div class="main-center-stage">
+        <div class='user-form-wrapper'>
+            <div class='user-title'>
+                <h2>Register</h2>
+            </div>
+
+            <div class='user-form'>
+
+
+                <form class='general-form' action="{% url 'auctions:register' %}" method="post">
+                    {% csrf_token %}
+                    {{registration_form.as_p}}
+
+
+                    <div class='curtain-btn-wrapper'>
+                        <button class="curtain-btn" >
+                             <div class="curtain-btn-hover-state" ></div>
+                            <span>Register</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class='user-footer'>
+                {% if message %}
+                    <div>{{ message }}</div>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+    <div class='user-footer'>
+        Already have an account? <a href="{% url 'auctions:login' %}">Login here.</a>
+    </div>
+</section>
+
+{% endblock %}

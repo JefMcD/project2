@@ -1,0 +1,95 @@
+{% extends "auctions/layout.html" %}
+{%load static%}
+{% block body %}
+
+    <section class='auctions-wrapper'>
+
+
+        <div class="main-center-stage">
+            <div class = 'restart-wrapper'>
+                <div class='db-button-row'>
+
+                    <a href="{% url 'auctions:reset' %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>All Data</span>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class='db-button-row'>  
+                    <a href="{% url 'auctions:static_data' %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Lookup Data</span>
+
+                        </div>
+                    </a>
+
+                    <a href="{% url 'auctions:insert_users' %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Users</span>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'auctions:insert_listings' %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Listings</span>
+                        </div>
+                    </a>    
+
+                    <a href="{% url 'auctions:insert_bids' %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Insert Bids</span>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'auctions:insert_comments' %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Insert Comments</span>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class='db-button-row'>
+                    <a href="{% url 'auctions:delete_all' %}">
+                        <div class="curtain-btn db-button db-delete">
+                            <div class="curtain-btn-hover-state" ></div>
+                        <span>Delete All</span>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'auctions:delete_bids' %}">
+                        <div class="curtain-btn db-button db-delete">
+                            <div class="curtain-btn-hover-state" ></div>
+                        <span>Delete Bids</span>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'auctions:delete_comments' %}">
+                        <div class="curtain-btn db-button db-delete">
+                            <div class="curtain-btn-hover-state" ></div>
+                        <span>Delete Comments</span>
+                        </div>
+                    </a>
+                </div>
+                <div class='db-button-row'>
+                    <div class='footer'>{{message}}</div>
+                </div>
+            </div>
+
+        </div>
+    
+    </section>
+    
+ 
+    
+
+
+{% endblock %}

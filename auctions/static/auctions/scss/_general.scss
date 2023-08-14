@@ -1,0 +1,514 @@
+@use 'summer-theme';
+@use 'fonts';
+
+
+/*********************************************************
+***
+***     General Styles for All Pages
+***
+*********************************************************/
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0; 
+    height: 100%; 
+    //overflow: hidden // switch off scrollbars
+}
+
+body {
+    font-family: fonts.$font-stack1;
+    color: summer-theme.$dk-002;
+}
+
+/* Scrollbars */
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: summer-theme.$dk-001 summer-theme.$lt-001;
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background:summer-theme.$lt-001;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: summer-theme.$dk-001;
+    border-radius: 20px;
+    border: 3px solid summer-theme.$lt-001;
+  }
+  /* end scrollbars */
+  
+
+
+
+.auctions-wrapper{
+    position: relative;
+    display: block;
+
+    top: 0rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-position: left bottom;
+
+    //background-color:summer-theme.$green-001;
+    //border: 5px solid blue;
+
+    background-image: url(../img/lime-foot.jpg);
+    background-repeat: repeat-x;
+    background-position: left bottom;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+.main-center-stage{
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+
+    top: 6rem;
+    left: 0;
+
+    background-color: rgb(0, 158, 53);
+    border-top: 5px solid summer-theme.$dk-001;
+    border-bottom: 5px solid summer-theme.$dk-001;
+
+
+
+}
+.main-center-stage::after {
+    content: "";
+    background: url(../img/big-lime.svg);
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 0;   
+  }
+
+.db-button-row{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+
+    h1{
+        font-size: 24pt;
+    }
+    h2{
+        font-size: 18pt;
+    }
+    //background-color: skyblue;
+    //border: 2px solid darkblue;
+    //color: darkgreen;  
+    padding: 1rem;
+    width: 50rem;  
+}
+
+
+.center-block{
+    position: relative;
+    display: block;
+    h1{
+        font-size: 24pt;
+    }
+    h2{
+        font-size: 18pt;
+    }
+    //background-color: skyblue;
+    //border: 2px solid summer-theme.$dk-002;
+    //color: darkgreen;  
+    padding: 1rem;
+    width: 50rem;  
+}
+.restart-wrapper{
+    position: relative;
+    display: block;
+ 
+    padding: 1rem;
+    width: 50rem; 
+    height: 75vh; 
+}
+
+.active-listings-wrapper{
+    position: relative;
+    display: block;
+
+    //color: rgb(100, 0, 87);  
+
+    margin-top: 0rem;
+    padding: 1rem;
+    width: 90%; 
+    max-width: 60rem;
+    height: 80vh; 
+
+    overflow-y: scroll;
+    z-index: 1;
+}
+.active-listings-sidebar{
+    background-color: summer-theme.$lt-002;
+    border: 2px solid summer-theme.$dk-002;
+    border-radius: 0.5rem;
+
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    z-index:1;
+}
+
+.active-listings-grid{
+    position: relative;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 1fr 2fr;
+
+    background-color: summer-theme.$lt-002;
+    border: 2px solid summer-theme.$dk-002;
+    border-radius: 0.5rem;
+
+    padding: 1rem;
+    min-width: 50rem;
+    min-height: 10rem;
+
+}
+
+.listing-image{
+    position: relative;
+    display: inline-block;
+    top:0;
+    left:0;
+    height: 10rem;
+    border: 2px solid summer-theme.$dk-002;
+    border-radius: 0.5rem;
+    //background-color: darkcyan;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+
+    }
+}
+
+
+
+
+
+.listing-page-wrapper{
+    position: relative;
+    display: block;
+
+    //background-color: rgb(150, 135, 235);
+    //border: 2px solid darkblue;
+
+    padding: 1rem;
+    width: 90%; 
+    max-width: 60rem;
+    height: 85vh; 
+
+
+    margin-bottom: 0.5rem;
+
+    overflow-y: scroll;
+
+    z-index: 1;
+}
+.listing-page-inner-wrapper{
+
+    background-color: summer-theme.$lt-002;
+    border: 2px solid summer-theme.$dk-002;
+    border-radius: 0.5rem;
+    margin-top:2rem;
+    height: 50rem;
+
+    padding: 1rem;
+
+}
+
+.title-wrapper{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 3rem;
+    width: 100%;
+    align-items: center;
+    //border: 2px solid green;
+    //background-color: darkgreen;
+}
+
+
+.list-item{
+    margin-bottom: 0.2rem;
+}
+
+.listpage-title-flexbox{
+    display: flex;
+    justify-content: space-between;
+    font-size: 18pt;
+    font-weight: 700;
+    height: 2rem;
+    align-items: center;
+
+    //border: 2px solid white;
+}
+
+.test1{
+    display: block;
+    border: 2px solid summer-theme.$accent-001;
+    border-radius: 0.5rem;
+    background-color: rgb(169, 231, 213);
+}
+.test2{
+    display: block;
+    border: 2px solid summer-theme.$accent-001;
+    border-radius: 0.5rem;
+    background-color: rgb(57, 165, 160);
+}
+.test3{
+    display: block;
+    border: 2px solid summer-theme.$accent-001;
+    border-radius: 0.5rem;
+    background-color: rgb(23, 109, 124);
+}
+
+
+.active-listing-page-info-wrapper{
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 10rem;
+    padding: 0.5rem;
+
+    border: 2px solid summer-theme.$accent-001;
+    border-radius: 0.5rem;
+    //background-color: rgb(217, 218, 176);
+}
+
+
+.active-listing-page-title-flexbox{
+    position: relative;
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+
+    padding: 0.2rem 0.5rem;
+    border: 2px solid summer-theme.$accent-001;
+    border-radius: 0.5rem;
+    background-color: rgb(169, 231, 213);
+
+    .listing-page-title{
+        font-size: 16pt;
+        font-weight: 700;
+    }
+    .listing-page-price{
+        font-size: 14pt;
+    }
+    .listing-page-condition{
+        font-size: 12pt;
+    }
+}
+.active-listing-page-description{
+    display: block;
+
+    height: 4rem;
+    padding: 0.2rem 0.5rem;
+    margin-top: 0.5rem;
+
+    //color: summer-theme.$lt-001;
+    //border: 2px solid summer-theme.$accent-001;
+    //border-radius: 0.5rem;
+    //background-color: rgb(57, 165, 160);
+}
+.active-listings-page-end-date{
+    display: block;
+    padding: 0.3rem;
+    margin-top: 0.5rem;
+
+
+    font-size: 12pt;
+    //color: summer-theme.$lt-001;
+    //border: 2px solid summer-theme.$accent-001;
+    //border-radius: 0.5rem;
+    //background-color: rgb(23, 109, 124); 
+}
+
+.condition{
+    display: inline-block
+}
+
+
+
+.description-active-listings-page{
+    padding: 0.3rem 0;
+    font-size: 16pt;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.date{
+    display: inline-block;
+    font-size: 12pt;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    bottom: 1rem;
+}
+
+
+
+.start-price{
+    display: inline-block;
+    font-size: 14pt;
+    margin-right: 1rem;
+    color: summer-theme.$orange-002;
+}
+.start-price-active-listings-page{
+    display: inline-block;
+    font-size: 16pt;
+    margin-top: 2rem;
+}
+
+
+.listpage-bid{
+    display: inline-block;
+    font-size: 16pt;
+    margin-right: 1rem;
+    color: summer-theme.$accent-001;
+}
+
+
+
+
+
+
+
+
+.listing-big-image{
+    position: relative;
+    display: block;
+    top:0;
+    left:0;
+    margin: auto;
+    height: 25rem;
+    border: 2px solid summer-theme.$accent-001;
+    border-radius: 0.5rem;
+    //background-color: darkcyan;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+
+    }
+}
+
+.listing-mainpage-info{
+    position: relative;
+    display: block;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    height: 12rem;
+    width: 100%;
+    padding: 0.5rem;
+
+    //border: 2px solid rgb(6, 116, 124);
+    //background-color: rgb(202, 99, 212); 
+}
+
+
+
+
+
+
+
+
+.comments-wrapper{
+    position: relative;
+    display: block;
+
+    padding: 1rem;
+
+    border: 2px solid summer-theme.$lt-001;
+    background-color: summer-theme.$lt-002;
+
+    border: 2px solid summer-theme.$dk-002;
+    border-radius: 0.5rem;
+
+    width: 100%;
+
+}
+
+.comments-grid{
+    position: relative;
+    display: grid;
+    margin-top: 1rem;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 0.5rem;
+
+    //border: 2px solid summer-theme.$dk-002;
+    background-color: summer-theme.$lt-001
+}
+
+.comment-item{
+    //border: 2px solid grey;
+}
+
+.comment-form-textarea{
+    margin-top: 0.5rem;
+    padding:0.5rem;
+    font-size: 14pt;
+    font-family: fonts.$font-stack1;
+
+    //border: 2px solid summer-theme.$dk-002;
+}
+
+
+
+.watchlist-header{
+    position: relative;
+    display: block;
+    font-size: 18pt;
+
+    margin-bottom: 1rem;
+    text-align: center;
+
+    //border: 2px solid black;
+}
+
+
+.footer{
+    position: relative;
+    display: block;
+
+    height: 3rem;
+    //border: 2px solid purple;
+    //background-color: lightblue;
+    //color: black;
+
+    padding:0.5rem
+}
+
+
+
+
+
+
+

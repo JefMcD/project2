@@ -1,0 +1,953 @@
+@font-face {
+  font-family: grotesk;
+  src: url("../fonts/woff/FamiljenGrotesk-Medium.woff2");
+}
+@font-face {
+  font-family: headliner;
+  src: url("../fonts/woff/headliner.woff2");
+}
+@font-face {
+  font-family: domine-bold;
+  src: url("../fonts/woff/Domine-Bold.woff2");
+}
+@font-face {
+  font-family: eras-std;
+  src: url("../fonts/woff/ERASDEMI.woff2");
+}
+@font-face {
+  font-family: lazenby;
+  src: url("../fonts/woff/LazenbyCompLiquid.woff2");
+}
+@font-face {
+  font-family: massive;
+  src: url("../fonts/woff/massive_retaliation.woff2");
+}
+@font-face {
+  font-family: tantrum;
+  src: url("../fonts/woff/tantrum.woff2");
+}
+@font-face {
+  font-family: exclude_italic;
+  src: url("../fonts/woff/exclude_italic.woff2");
+}
+@font-face {
+  font-family: exclude_basic;
+  src: url("../fonts/woff/exclude.woff2");
+}
+@font-face {
+  font-family: spantaran;
+  src: url("../fonts/woff/spantaran.woff2");
+}
+::-moz-selection { /* Code for Firefox */
+  color: #fffbea;
+  background: #e27900;
+}
+
+::selection {
+  color: #fffbea;
+  background: #e27900;
+}
+
+.user-form-wrapper {
+  position: relative;
+  display: block;
+  width: 40rem;
+  height: 77vh;
+  margin-top: 0rem;
+  z-index: 1;
+}
+
+.user-title {
+  position: relative;
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.user-form {
+  position: relative;
+  display: flex;
+  top: 0rem;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  background-color: #fff3e0;
+  border: 2px solid #6b2b00;
+  border-radius: 0.5rem;
+  justify-content: center;
+  font-size: 16pt;
+  font-family: grotesk, Arial, sans-serif;
+}
+
+.user-formfield {
+  height: 2rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 2px solid #e27900;
+  border-radius: 4px;
+}
+
+.user-form-textarea {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 2px solid #e27900;
+  border-radius: 4px;
+}
+
+.user-footer {
+  position: relative;
+  display: block;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.general-form {
+  font-family: grotesk, Arial, sans-serif;
+  font-size: 16pt;
+}
+.general-form input {
+  font-family: grotesk, Arial, sans-serif;
+  font-size: 14pt;
+}
+.general-form textarea {
+  font-family: grotesk, Arial, sans-serif;
+  font-size: 14pt;
+}
+
+.create-listing-form-startbid {
+  background-image: url(../img/dollar.svg);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: left 4px;
+  height: 2rem;
+  padding: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.bid-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0rem;
+  padding: 0.5rem;
+}
+.bid-box button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+.bid-form {
+  margin-top: 0rem;
+}
+
+.bid-formfield {
+  display: inline-block;
+  height: 2rem;
+  padding: 0.5rem;
+  padding-left: 1.5rem;
+  width: 10rem;
+  background-image: url(../img/dollar.svg);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: left 4px;
+  border: 2px solid #6b2b00;
+  border-radius: 0.5rem;
+  font-family: grotesk, Arial, sans-serif;
+  font-size: 16pt;
+}
+
+.bid-form-message-box {
+  display: inline-block;
+  margin-left: 2rem;
+  right: 0;
+  font-size: 14pt;
+  margin-top: 0rem;
+  color: #6b2b00;
+}
+
+.listing-form-wrapper {
+  position: relative;
+  display: block;
+}
+
+.form-message {
+  text-align: center;
+}
+
+label {
+  display: inline-block;
+  width: 7rem;
+  height: 2rem;
+  padding: 0.5rem;
+}
+
+.comment-form-wrapper {
+  display: flex;
+}
+
+.comment-form-class {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.comment-form-class div {
+  flex-grow: 1;
+}
+.comment-form-class textarea {
+  flex-grow: 1;
+}
+
+.comment-form-label {
+  position: relative;
+  display: inline-block;
+  width: 5rem;
+  height: 2rem;
+  padding-top: 0.5rem;
+  margin: 0.5rem 0.5rem 0 0;
+}
+
+.active-listings-dropdown {
+  position: relative;
+  display: block;
+  margin-bottom: 1rem;
+  width: 10rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  padding-left: 1.5rem;
+  border: 2px solid #6b2b00;
+  border-radius: 0.5rem;
+  font-family: grotesk, Arial, sans-serif;
+  font-size: 12pt;
+  background-color: #e27900;
+  color: #fffbea;
+}
+
+.active-listings-dropdown option:checked {
+  color: #06747c;
+  background-color: #fff3e0;
+}
+
+.active-listings-dropdown option:hover {
+  color: #06747c;
+  background-color: #fff3e0;
+}
+
+.curtain-btn-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.curtain-btn {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  top: 0rem;
+  left: 0rem;
+  background-color: #e27900;
+  border-style: solid;
+  border-color: #ff9e78;
+  border-width: 3px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+}
+.curtain-btn span {
+  font-size: 12pt;
+  font-weight: 400px;
+  z-index: 1;
+  color: #fff;
+  transition-property: color, z-index;
+  transition-timing-function: ease-out;
+  transition-duration: 350ms;
+}
+.curtain-btn .curtain-btn-hover-state {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  transform: translateY(0);
+  transition-property: color, background-color, transform;
+  transition-timing-function: ease-out;
+  transition-duration: 300ms;
+  transition-delay: 200ms;
+  cursor: none;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.curtain-btn:hover .curtain-btn-hover-state {
+  background-color: #fff;
+  transform: translateY(-100%);
+  transition-duration: 500ms;
+  transition-property: color, background-color, transform;
+  transition-timing-function: ease-out;
+  transition-duration: 300ms;
+  transition-delay: 200ms;
+}
+
+.curtain-btn:hover span {
+  color: #ff8800;
+  z-index: 3;
+}
+
+.listings-login-btns {
+  position: relative;
+  display: block;
+  margin-top: 0.5rem;
+  width: 7rem;
+  height: 7.5rem;
+  padding: 0.5rem;
+  border: 2px solid #e27900;
+  border-radius: 0.5rem;
+}
+
+.listings-bid-btns {
+  position: relative;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  margin-top: 0rem;
+  padding: 0;
+  width: 14rem;
+  height: 3rem;
+}
+
+.title-btns-flexbox {
+  display: flex;
+}
+
+.listing-login {
+  margin-top: 0rem;
+}
+
+.db-button {
+  width: 10rem;
+  height: 4rem;
+  padding-top: 1.2rem;
+  background-color: #329e00;
+}
+
+.comment-btn {
+  margin-top: 0;
+  margin-left: 0.5rem;
+  margin: 0.5rem;
+}
+
+.db-delete {
+  background-color: #c70d00;
+}
+
+.medium-sq-btn {
+  width: 6rem;
+  height: 2.5rem;
+  padding-top: 0.3em;
+}
+
+.large-sq-btn {
+  width: 8rem;
+  height: 3.5rem;
+  padding-top: 0.6rem;
+}
+
+.create-listing-btn {
+  margin-top: 1rem;
+}
+
+.bid-btn-wrapper {
+  margin-top: 0rem;
+}
+.bid-btn-wrapper img {
+  width: 100%;
+}
+
+.bid-btn {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.5rem;
+  border-radius: 50%;
+}
+
+.bid-btn:hover .tick {
+  filter: invert(48%) sepia(79%) saturate(1476%) hue-rotate(86deg) brightness(58%) contrast(119%);
+}
+
+.auction-status-btns {
+  position: relative;
+  display: flex;
+  top: 0rem;
+  left: 0;
+  margin-right: 0rem;
+  height: 5rem;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 12pt;
+}
+
+.listings-watch-btns-wrapper {
+  position: relative;
+  display: block;
+  margin-top: 0rem;
+  padding: 0;
+  width: 6rem;
+  height: 3rem;
+}
+
+.watch-auction-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 0rem;
+  margin-left: 0rem;
+}
+
+.listings-auction-btn-wrapper {
+  position: relative;
+  display: block;
+  margin-top: 0rem;
+  padding: 0;
+  width: 11.5rem;
+  height: 3rem;
+}
+
+.auction-btn-wrapper {
+  margin-top: 0rem;
+}
+
+.end-auction-btn {
+  margin-top: 0rem;
+  padding-top: 0.5rem;
+  width: 7rem;
+  height: 2.5rem;
+}
+
+.listings-search-btn-flexbox {
+  display: flex;
+  justify-content: center;
+}
+
+.listings-search-btn-wrapper {
+  margin-top: 4rem;
+}
+
+/*********************************************************
+***
+***     General Styles for All Pages
+***
+*********************************************************/
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: grotesk, Arial, sans-serif;
+  color: #6b2b00;
+}
+
+/* Scrollbars */
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #e27900 #fffbea;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #fffbea;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #e27900;
+  border-radius: 20px;
+  border: 3px solid #fffbea;
+}
+
+/* end scrollbars */
+.auctions-wrapper {
+  position: relative;
+  display: block;
+  top: 0rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-image: url(../img/lime-foot.jpg);
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.main-center-stage {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  top: 6rem;
+  left: 0;
+  background-color: rgb(0, 158, 53);
+  border-top: 5px solid #e27900;
+  border-bottom: 5px solid #e27900;
+}
+
+.main-center-stage::after {
+  content: "";
+  background: url(../img/big-lime.svg);
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 0;
+}
+
+.db-button-row {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  width: 50rem;
+}
+.db-button-row h1 {
+  font-size: 24pt;
+}
+.db-button-row h2 {
+  font-size: 18pt;
+}
+
+.center-block {
+  position: relative;
+  display: block;
+  padding: 1rem;
+  width: 50rem;
+}
+.center-block h1 {
+  font-size: 24pt;
+}
+.center-block h2 {
+  font-size: 18pt;
+}
+
+.restart-wrapper {
+  position: relative;
+  display: block;
+  padding: 1rem;
+  width: 50rem;
+  height: 75vh;
+}
+
+.active-listings-wrapper {
+  position: relative;
+  display: block;
+  margin-top: 0rem;
+  padding: 1rem;
+  width: 90%;
+  max-width: 60rem;
+  height: 80vh;
+  overflow-y: scroll;
+  z-index: 1;
+}
+
+.active-listings-sidebar {
+  background-color: #fff3e0;
+  border: 2px solid #6b2b00;
+  border-radius: 0.5rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  z-index: 1;
+}
+
+.active-listings-grid {
+  position: relative;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr 2fr;
+  background-color: #fff3e0;
+  border: 2px solid #6b2b00;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  min-width: 50rem;
+  min-height: 10rem;
+}
+
+.listing-image {
+  position: relative;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  height: 10rem;
+  border: 2px solid #6b2b00;
+  border-radius: 0.5rem;
+}
+.listing-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.listing-page-wrapper {
+  position: relative;
+  display: block;
+  padding: 1rem;
+  width: 90%;
+  max-width: 60rem;
+  height: 85vh;
+  margin-bottom: 0.5rem;
+  overflow-y: scroll;
+  z-index: 1;
+}
+
+.listing-page-inner-wrapper {
+  background-color: #fff3e0;
+  border: 2px solid #6b2b00;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  height: 50rem;
+  padding: 1rem;
+}
+
+.title-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
+  width: 100%;
+  align-items: center;
+}
+
+.list-item {
+  margin-bottom: 0.2rem;
+}
+
+.listpage-title-flexbox {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18pt;
+  font-weight: 700;
+  height: 2rem;
+  align-items: center;
+}
+
+.test1 {
+  display: block;
+  border: 2px solid #06747c;
+  border-radius: 0.5rem;
+  background-color: rgb(169, 231, 213);
+}
+
+.test2 {
+  display: block;
+  border: 2px solid #06747c;
+  border-radius: 0.5rem;
+  background-color: rgb(57, 165, 160);
+}
+
+.test3 {
+  display: block;
+  border: 2px solid #06747c;
+  border-radius: 0.5rem;
+  background-color: rgb(23, 109, 124);
+}
+
+.active-listing-page-info-wrapper {
+  position: relative;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 10rem;
+  padding: 0.5rem;
+  border: 2px solid #06747c;
+  border-radius: 0.5rem;
+}
+
+.active-listing-page-title-flexbox {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.2rem 0.5rem;
+  border: 2px solid #06747c;
+  border-radius: 0.5rem;
+  background-color: rgb(169, 231, 213);
+}
+.active-listing-page-title-flexbox .listing-page-title {
+  font-size: 16pt;
+  font-weight: 700;
+}
+.active-listing-page-title-flexbox .listing-page-price {
+  font-size: 14pt;
+}
+.active-listing-page-title-flexbox .listing-page-condition {
+  font-size: 12pt;
+}
+
+.active-listing-page-description {
+  display: block;
+  height: 4rem;
+  padding: 0.2rem 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.active-listings-page-end-date {
+  display: block;
+  padding: 0.3rem;
+  margin-top: 0.5rem;
+  font-size: 12pt;
+}
+
+.condition {
+  display: inline-block;
+}
+
+.description-active-listings-page {
+  padding: 0.3rem 0;
+  font-size: 16pt;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.date {
+  display: inline-block;
+  font-size: 12pt;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  bottom: 1rem;
+}
+
+.start-price {
+  display: inline-block;
+  font-size: 14pt;
+  margin-right: 1rem;
+  color: #ff8800;
+}
+
+.start-price-active-listings-page {
+  display: inline-block;
+  font-size: 16pt;
+  margin-top: 2rem;
+}
+
+.listpage-bid {
+  display: inline-block;
+  font-size: 16pt;
+  margin-right: 1rem;
+  color: #06747c;
+}
+
+.listing-big-image {
+  position: relative;
+  display: block;
+  top: 0;
+  left: 0;
+  margin: auto;
+  height: 25rem;
+  border: 2px solid #06747c;
+  border-radius: 0.5rem;
+}
+.listing-big-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.listing-mainpage-info {
+  position: relative;
+  display: block;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  height: 12rem;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.comments-wrapper {
+  position: relative;
+  display: block;
+  padding: 1rem;
+  border: 2px solid #fffbea;
+  background-color: #fff3e0;
+  border: 2px solid #6b2b00;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.comments-grid {
+  position: relative;
+  display: grid;
+  margin-top: 1rem;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 0.5rem;
+  background-color: #fffbea;
+}
+
+.comment-form-textarea {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  font-size: 14pt;
+  font-family: grotesk, Arial, sans-serif;
+}
+
+.watchlist-header {
+  position: relative;
+  display: block;
+  font-size: 18pt;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.footer {
+  position: relative;
+  display: block;
+  height: 3rem;
+  padding: 0.5rem;
+}
+
+.nav_wrapper {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6rem;
+  z-index: 3;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  padding: 0 50px;
+  background-image: url(../img/lime-nav.jpg);
+  background-repeat: repeat-x;
+  background-position: left bottom;
+}
+
+.signed-in-status {
+  font-size: 10pt;
+}
+
+.logo {
+  font-family: grotesk, Arial, sans-serif;
+  font-size: 30pt;
+  font-weight: 900;
+  max-width: 490px;
+  text-transform: uppercase;
+}
+
+.logo img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #6b2b00;
+}
+
+ul {
+  list-style: none;
+}
+
+.desktop-main-menu {
+  margin-right: 50px;
+}
+
+.desktop-main-menu ul {
+  position: relative;
+  display: flex;
+}
+
+.desktop-main-menu ul li {
+  position: relative;
+  margin-right: 1rem;
+  padding-bottom: 2px;
+}
+
+/*
+The psuedo element is usually created as an absolute element.
+with no need to define display type. (unless its flex or grid)
+
+By default the inline element will not display while it is empty.
+So if you positon it relative it will not display since inline 
+position does not allow defining the size.
+
+If you change it to block or inline-block and give it some size
+the psuedo element will disolay as a relative position.
+
+The absolute position removes the psuedo element from the 
+normal flow and converts it to an inline-block and its size can be 
+defined and its placement within the parent element. 
+*/
+.desktop-main-menu ul li a::after {
+  content: "";
+  display: block;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background: #fff3d8;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition-timing-function: cubic-bezier(0.71, 0.21, 1, 1);
+  transition-duration: 250ms;
+  transition-property: background, transform;
+}
+
+.desktop-main-menu a:hover::after {
+  transform: scaleX(1);
+  background: #ff8800;
+  transform-origin: left;
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(200%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

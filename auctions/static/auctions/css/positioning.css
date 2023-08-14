@@ -1,0 +1,77 @@
+@font-face {
+    font-family: grotesk;
+    src: url(../fonts/static/FamiljenGrotesk-Medium.ttf);
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: grotesk, Arial, sans-serif;
+    background-color: #000;
+    color: aliceblue;
+}
+
+
+span{
+    position: relative;
+    color:#ffcc3e;
+}
+
+.cyanBox{
+    display: block;
+    position: relative;
+    background-color: rgb(88, 163, 185);
+ 
+}
+
+.boxes {
+    top: 200px;
+    left: 200px;
+}
+
+.purpleBox {
+    display: block;
+    position: relative;
+    background-color: purple;
+
+
+}
+
+.blueBox {
+    display: block;
+    position:relative;
+    background-color: blue;
+    width:250px;
+    height: 100px;
+
+}
+
+.redBox {
+    display: inline;
+    position: relative;
+    background-color: red;
+    width: 75px;
+    height: 50px;
+}
+
+.greenBox {
+    display: inline-block;
+    position: relative;
+    background-color:rgb(118, 161, 118);
+    width: 75px;
+    height: 50px;
+}
+
+.brigreenBox {
+    display: inline-block;
+    position: relative;
+    background-color:rgb(5, 124, 5);
+    width: 750px;
+    height: 250px;
+}

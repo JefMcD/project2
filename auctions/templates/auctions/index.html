@@ -1,0 +1,108 @@
+{% extends "auctions/layout.html" %}
+{%load static%}
+{% block body %}
+
+
+
+    <section class='auctions-wrapper'>
+
+        <div class="main-center-stage">
+            
+            <div class='active-listings-sidebar'>
+                <div class='watchlist-header'>
+                    <h2>Listings</h2>
+                </div>
+                <div class='category-form-wrapper'>
+
+                    <form action="{% url 'auctions:index'%}", method='POST' id='listing-search-form'>
+
+                        {% csrf_token %}
+                        {{ listings_search_form.as_div}}
+
+  
+                        <div class='listings-search-btn-flexbox'>
+                            <button class='curtain-btn-wrapper listings-search-btn-wrapper'>
+                                <div class="curtain-btn medium-sq-btn">
+                                    <div class="curtain-btn-hover-state medium-sq-btn" ></div>
+                                    <span>Search</span>
+                                </div>
+                            </button>
+                        </div>
+
+
+                    </form>
+                </div>
+
+                {{search_form_message}}
+            </div>
+
+
+            
+
+
+            <div class='active-listings-wrapper'>
+
+                
+                <div class='active-listings-grid'>
+                    {% for listing in listings %}
+
+                            <div class='listing-image'>
+                                <a href="{% url 'auctions:listing_page' listing.listing_id %}">
+                                    <img src={{listing.image_url}}>
+                                </a>
+                            </div>
+
+                            <div class='active-listing-page-info-wrapper'>
+
+
+                                
+                                <div class='active-listing-page-title-flexbox'>
+
+                                    <div class='listing-page-title'>
+                                        <a href="{% url 'auctions:listing_page' listing.listing_id %}">
+                                            {{listing.title}}
+                                        </a>
+                                    </div>
+                                    <div class='listing-page-price'>
+                                        {% if listing.start_bid > listing.highest_bid%}
+                                                <div>Price: ${{listing.start_bid|floatformat:2}}</div>
+                                        {% else %}
+                                                <div>Price: ${{ listing.highest_bid | floatformat:2 }} </div>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class='listing-page-condition'>
+                                        ({{listing.health_fk.description}})
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class='active-listing-page-description'>
+                                    {{listing.description}}
+                                </div>
+
+
+
+
+                                <div class='active-listings-page-end-date'>
+                                    Listed On   : {{listing.listing_start}} by {{listing.user_fk.username}}
+                                </div>
+                            
+
+
+                            </div>
+
+                    {% endfor%}
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+    
+    
+
+
+{% endblock %}

@@ -1,0 +1,121 @@
+
+@use 'summer-theme';
+@use 'fonts';
+
+.nav_wrapper {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    z-index: 3;
+
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+
+    padding: 0 50px;
+
+    background-image: url(../img/lime-nav.jpg);
+    background-repeat: repeat-x;
+    background-position: left bottom;
+
+    //background-color: purple;
+    //border: 5px solid yellow;
+
+}
+.signed-in-status{
+    //color: rgb(255, 255, 255);
+    font-size: 10pt;
+}
+
+.logo {
+    font-family: fonts.$logo-font;
+    font-size: 30pt;
+    font-weight: 900;
+    max-width: 490px;
+    text-transform: uppercase;
+
+    //background-color:green;
+    //border: 5px solid yellow;
+
+}
+
+.logo img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: summer-theme.$dk-002
+}
+
+ul {
+    list-style: none;
+}
+
+
+
+
+.desktop-main-menu {
+    margin-right: 50px;
+
+}
+
+.desktop-main-menu ul {
+    position: relative;
+    display: flex;
+}
+
+.desktop-main-menu ul li {
+    position: relative;
+    margin-right: 1rem;
+    padding-bottom: 2px;
+}
+
+
+/*
+The psuedo element is usually created as an absolute element.
+with no need to define display type. (unless its flex or grid)
+
+By default the inline element will not display while it is empty.
+So if you positon it relative it will not display since inline 
+position does not allow defining the size.
+
+If you change it to block or inline-block and give it some size
+the psuedo element will disolay as a relative position.
+
+The absolute position removes the psuedo element from the 
+normal flow and converts it to an inline-block and its size can be 
+defined and its placement within the parent element. 
+*/
+
+
+.desktop-main-menu ul li a::after {
+    content: '';
+    display: block;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+
+    background: summer-theme.$orange-001;
+    transform: scaleX(0);
+    transform-origin: right;
+
+    transition-timing-function: cubic-bezier(.71, .21, 1, 1);
+    transition-duration: 250ms;
+    transition-property: background, transform;
+}
+
+.desktop-main-menu a:hover::after {
+    transform: scaleX(1);
+    background: summer-theme.$orange-002;
+    transform-origin: left;
+}
+

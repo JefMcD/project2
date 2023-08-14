@@ -1,0 +1,181 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+{% block body %}
+
+<section class='auctions-wrapper'>
+
+    <div class="main-center-stage">
+        <div class='listing-page-wrapper'>
+
+                    <div class='listing-page-inner-wrapper'>
+
+
+
+                        <div class='listpage-title-flexbox'>
+                            <div>
+                                {{listing.title}}
+                            </div>
+                                   
+                            <div class='bid-form-message-box'>
+                                {{bid_message}}
+                            </div>
+                                                  
+                        </div>
+
+                            <div class='title-wrapper'>
+                                
+                                    <div class='listpage-bid'>
+                                        Current Bid: ${{listing.highest_bid|floatformat:2}}
+                                    </div>
+
+                                    {% if listing.is_active %}
+                                
+                                            {% if user.is_authenticated %}
+
+                                                    <div class="listings-bid-btns">
+                                                        <form class='bid-form' action="{% url 'auctions:process_bid' listing.listing_id %}" method='POST' name='listing_page-bidform'>
+                                                            {% csrf_token %}
+                                                            <div class='bid-box'>
+                                                                {{bid_form}}
+
+                                                                <button class='curtain-btn-wrapper bid-btn-wrapper'>
+                                                                    <div class="curtain-btn bid-btn">
+                                                                        <div class="curtain-btn-hover-state" ></div>
+                                                                            <img class='tick' src="{% static 'auctions/img/tick-yellow.svg' %}">   
+                                                                    </div>
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    <!--
+                                                        <div class='bid-form-message-box'>
+                                                            {{bid_message}}
+                                                        </div>
+                                                    -->
+                                                    </div>
+                                            {% endif %}
+                                        
+                                    {%endif%}
+
+                            </div>
+
+
+                        <div class='listing-big-image'><img src={{listing.image_url}}></div>
+                            
+                        <div class='listing-mainpage-info'>
+
+       
+                                <div class='list-item date'>Condition : {{listing.health_fk.description}}</div>
+                                <div class='start-price'>Start Price: ${{listing.start_bid|floatformat:2}}</div>
+                                <div class='list-item date'>Listed On   : {{listing.listing_start|date:"M d, Y"}}  by {{listing.user_fk.username}}</div>
+
+                                <div class='listing-page-description'>{{listing.description}}</div>
+                                
+                        </div>    
+                                
+
+                        <div class='auction-status-btns'>
+
+                            {% if user.is_authenticated %}
+
+                                        <div class="listings-watch-btns-wrapper">
+                                            {% if is_watched %}
+                                                <a href="{% url 'auctions:unwatch' listing.listing_id %}">
+                                                    <div class='watch-auction-btn'>
+                                                        <div class="curtain-btn medium-sq-btn">
+                                                                <div class="curtain-btn-hover-state" ></div>
+                                                            <span>Unwatch</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            {%else%}
+                                                <a href="{% url 'auctions:add_2_watchlist' listing.listing_id %}">
+                                                    <div class='watch-auction-btn'>
+                                                        <div class="curtain-btn medium-sq-btn">
+                                                            <div class="curtain-btn-hover-state  medium-sq-btn" ></div>
+                                                            <span>Watch</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            {%endif%}
+                                        </div>
+                                
+                                        <!--If item is listed by the User-->
+                                        {% if listing.user_fk == user %}
+
+                                            <div class="listings-auction-btn-wrapper">
+                                                    {% if listing.is_active %}
+                                                        <a href="{% url 'auctions:end_auction' listing.listing_id %}">
+                                                            <div class='curtain-btn-wrapper auction-btn-wrapper'>
+                                                                <div class="curtain-btn end-auction-btn">
+                                                                    <div class="curtain-btn-hover-state end-auction-btn" ></div>
+                                                                    <span>End Auction</span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    {% else %}
+                                                        <span>Auction Ended : </span> 
+                                                        {% if user_is_high_bidder %}
+                                                            <span>You Won!</span>
+                                                        {% endif %}
+                                                    {% endif %}
+                                            </div>
+
+                                        {% endif %}
+
+                            {% endif %}
+
+                            <div class='list-item date'>Auction Ends: {{listing.listing_end}}</div>
+
+                        </div>
+
+
+
+                    </div>
+                  
+            <div class = 'comments-wrapper'>
+                <h2>Comments</h2>
+                {% if user.is_authenticated  %}
+                    <div class='comment-form-wrapper'>
+                        <div class='comment-form-label'>
+                            Feedback
+                        </div>
+                        <form class='comment-form-class' action = "{% url 'auctions:process_comment' listing.listing_id %} " method = 'POST' id='the-comment-form'>
+                            {% csrf_token %}
+                            {{comment_form.as_div}}
+                        </form>
+                        <a href="{% url 'auctions:register' %}">
+                            <div class='curtain-btn-wrapper comment-btn'>
+                                <button class="curtain-btn medium-sq-btn" form='the-comment-form'>
+                                    <div class="curtain-btn-hover-state" ></div>
+                                    <a href="{% url 'auctions:register' %}"><span>Post</span>
+                                    </button>
+                            </div>
+                        </a>
+                    </div>
+                {% endif %}
+                <div class='comments-grid'>
+                        <div class='comment-item'>user</div>
+                        <div class='comment-item '>comment</div>
+                        <div class='comment-item '>date</div>
+                </div>
+                <div class='comments-grid'>
+                    {% for crow in comments_list %}
+                        <div class='comment-item'>{{crow.user_fk.username}}</div>
+                        <div class='comment-item '>{{crow.comment}}</div>
+                        <div class='comment-item '>{{crow.timestamp|date:"d-m-Y"}}</div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div><!--listing-page-block-->
+    </div><!--main-center-stage-->
+</section>
+
+
+
+
+
+
+
+
+{% endblock %}

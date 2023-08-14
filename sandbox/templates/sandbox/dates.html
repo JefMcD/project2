@@ -1,0 +1,66 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+
+
+    <section class='auctions-wrapper'>
+
+        <div class="main-center-stage">
+
+            <div class='center-block'>
+                <div>
+                    <h1>Sandbox</h1>
+                </div>
+                <div>
+                    <h2>Dates</h2>
+                </div>
+                <hr>
+                <br><br>
+                <div>Date Now    = {{date_now}}</div>
+                <br><br>
+                <div>Date Future = {{date_future}}</div>
+
+
+                <hr>
+                <div>
+                    <h1>FKeys</h1>
+                </div>
+                <div>
+                    <h2>iteration</h2>
+                </div>
+                <hr>
+                {% for listing in all_listings %}
+                    <div> {{listing.listing_id}} </div>
+                {% endfor %}
+                <hr>
+                <div>bid_listing.listing_is = {{bid_listing.listing_id}}
+                <div>bid_listing.title = {{bid_listing.title}}
+                <div>bid_listing.user_fk.username = {{bid_listing.user_fk.username}}
+                <hr>
+                <h2>Indexing into a FKey</h2>
+                {% for l2_bid in l2_bids %}
+                    <div> bid value = {{l2_bid.bid}} : bidder {{ l2_bid.user_fk.username}} </div>
+                {% endfor %}
+                <div>high bid = {{high_bid}}</div>
+                <hr>
+                <div>
+                    <h2>Many 2 Many Relationships</h2>
+                </div>
+                {% for pub in publications %}
+                    <div>{{pub.title}}
+                {% endfor %}
+                <hr>
+                <div>
+                    <h2>Admin</h2>
+                    <hr>
+                    {{admin_message}}
+                </div>
+                <hr>
+            </div>
+        </div>
+    
+    </section>
+
+
+{% endblock %}
