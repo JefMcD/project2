@@ -1,42 +1,46 @@
-#README
+# README 
 
-##Prep
+## Prep
 
-###Create Virtual Environment
-$ cd /path-to-parent-folder-of-project-root/
-$ python3 -m venv .venv
-$ source .venv/bin/activate
+### Create Virtual Environment
 
-##Packages to install
+cd /path-to-parent-folder-of-project-root/
+python3 -m venv .venv
+source .venv/bin/activate
 
-###Essential
+## Packages to install
+
+### Essential
+
 *django
 *python-decouple
 
-$ pip3 install django 
-$ pip3 install python-decouple 
+pip3 install django 
+pip3 install python-decouple 
 
 
 ###For Deployment to Production 
 *whitenoise
-$ pip3 install whitenoise 
+pip3 install whitenoise 
 
 
-###To Use MySQL DB (instruction for Ubuntu 22.04.02)
+###To Use MySQL DB (instruction for Ubuntu 22.04.02)###
 *pkg-config
 *python3-dev default-libmysqlclient-dev build-essential
 *mysqlclient
 
-$ sudo apt install mysql-server -y
-$ sudo mysql_secure_installation
-$ sudo apt-get update
-$ sudo apt-get install pkg-config -y
-$ sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
-$ pip install mysqlclient
+sudo apt install mysql-server -y
+sudo mysql_secure_installation
+sudo apt-get update
+sudo apt-get install pkg-config -y
 
-###Configure DATABASES in settings.py
-# Connecting MySQL
-# https://stackoverflow.com/questions/19189813/setting-django-up-to-use-mysql
+sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
+
+pip install mysqlclient
+
+### Configure DATABASES in settings.py
+// Connecting MySQL
+// https://stackoverflow.com/questions/19189813/setting-django-up-to-use-mysql
 
 DATABASES = {
     'default': {
@@ -53,18 +57,18 @@ DATABASES = {
 }
 
 
-###Additional Debug Info
+### Additional Debug Info
 *django-debug-toolbar
 See Django Debug Toolbar Documentation
 
-#Assessment Video
-##Video Testing Requirements for Assessment
+# Assessment Video
+## Video Testing Requirements for Assessment
  [https://rumble.com/v37lw8a-project2-commerce.html](https://rumble.com/v37lw8a-project2-commerce.html).
 
 
 
-###Assessment Video Timestamps
-Timestamps for Video
+### Assessment Video Timestamps
+
 https://rumble.com/v388v5s-cs50-project-2-commerce.html
 
 	RQ. 1 Models
