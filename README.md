@@ -12,22 +12,22 @@ source .venv/bin/activate
 
 ### Essential
 
-*django
-*python-decouple
+* django
+* python-decouple
 
 pip3 install django 
 pip3 install python-decouple 
 
 
-###For Deployment to Production 
-*whitenoise
+### For Deployment to Production 
+* whitenoise
 pip3 install whitenoise 
 
 
 ###To Use MySQL DB (instruction for Ubuntu 22.04.02)###
-*pkg-config
-*python3-dev default-libmysqlclient-dev build-essential
-*mysqlclient
+* pkg-config
+* python3-dev default-libmysqlclient-dev build-essential
+* mysqlclient
 
 sudo apt install mysql-server -y
 sudo mysql_secure_installation
@@ -58,7 +58,7 @@ DATABASES = {
 
 
 ### Additional Debug Info
-*django-debug-toolbar
+* django-debug-toolbar
 See Django Debug Toolbar Documentation
 
 # Assessment Video
@@ -71,48 +71,48 @@ See Django Debug Toolbar Documentation
 
 https://rumble.com/v388v5s-cs50-project-2-commerce.html
 
-	RQ. 1 Models
-0:00	The Database has 7 entities, 6 models and 1 M2M field which is contained in the User Model
-
-	RQ. 2 Test.
-0:39		Create Listing
-		Metal Zone
-		https://i.imgur.com/jkeDHx3.jpeg
-		Everything you need to sound exacly like Eddie Van Halen
-
-		Title, Description, Starting Bid, Image, Category, Condition
-
-	RQ.3 Test
-0.25		Active Listings Page
-		1. Default Route shows all the current Active Listings
-		Displaying; Title, Description, Current Price, Photo
-
-	RQ.4 Test
-1.00		Listing Page	
-		Clicking a listing goes to that page, showing details for that item
 
 
-1.38		1.	Add Item To Watchlist
-1.45			Remove Item From Watchlist
-2.05		2.	Bid Lower than starting price On Item - Presented Error
-2.16			Bid lower than high Bid on item - Presented Error
-2.23			Bid Higher - Message
-1:17		3.	Close The Auction 
-2.30		4. 	Win Auction and Load Listing Page -  Message ‘You Won’
-2.58		5. 	Add Comment to Listing
-3.05		6. 	Display All Comments
+## RQ. 1 Models (0:00)
+1. The Database has 7 entities, 6 models and 1 M2M field which is contained in the User Model 
 
-	RQ.5 Test
-		Watchlist
-1.35		Add Items to Watchlist
-1:35		Open Watchlist Page to SHow
+## RQ. 2 Create Listing Test. (0:39) 
+1.	Metal Zone
+	https://i.imgur.com/jkeDHx3.jpeg
+	Everything you need to sound exacly like Eddie Van Halen
+
+	Title, Description, Starting Bid, Image, Category, Condition 
+
+## RQ.3 Test Active Listings Page (0.25)
 		
-1.35		Click Watchlist Item goes to that page
+1. Default Route shows all the current Active Listings
+		Displaying; Title, Description, Current Price, Photo 
 
-	RQ.6 Test
-		Categories
-3.10		Users can display a list by category
+## RQ.4 Listing Page Test
+			
+1. Clicking a listing goes to that page, showing details for that item (1.00)
 
-	RQ.7  Test
-		Django Admin
-3.35		Superuser can add, edit and delete listings, comments and bids on the site
+
+2.	Add Item To Watchlist (1.38)
+	Remove Item From Watchlist (1.45)
+3.	Bid Lower than starting price On Item - Presented Error (2.05)
+	Bid lower than high Bid on item - Presented Error (2.16)
+	Bid Higher - Message (2.23)
+4.	Close The Auction  (1:17)
+5. 	Win Auction and Load Listing Page -  Message ‘You Won’ (2.30)
+6. 	Add Comment to Listing (2.58)
+7. 	Display All Comments (3.05)
+
+## RQ.5 Watchlist Test
+		
+1. Add Items to Watchlist (1.35)
+2. Open Watchlist Page to SHow (1:35)
+3. Click Watchlist Item goes to that page (1.35)
+
+## RQ.6 Categories Test (3.10)
+		
+1. Users can display a list by category 
+
+## RQ.7  Django Admin Test (3.35)
+		
+1. Superuser can add, edit and delete listings, comments and bids on the site 
