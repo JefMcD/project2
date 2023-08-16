@@ -42,6 +42,7 @@ pip install mysqlclient
 // Connecting MySQL
 // https://stackoverflow.com/questions/19189813/setting-django-up-to-use-mysql
 
+```
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
@@ -55,7 +56,7 @@ DATABASES = {
         },
     }
 }
-
+```
 
 ### Additional Debug Info
 * django-debug-toolbar
@@ -63,15 +64,7 @@ See Django Debug Toolbar Documentation
 
 # Assessment Video
 ## Video Testing Requirements for Assessment
- [https://rumble.com/v37lw8a-project2-commerce.html](https://rumble.com/v37lw8a-project2-commerce.html).
-
-
-
-### Assessment Video Timestamps
-
 https://rumble.com/v388v5s-cs50-project-2-commerce.html
-
-
 
 ## RQ. 1 Models (0:00)
 1. The Database has 7 entities, 6 models and 1 M2M field which is contained in the User Model 
