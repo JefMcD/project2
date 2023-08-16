@@ -918,6 +918,20 @@ def pop_listings():
          'health_fk' : good, 
          'user_fk' : sparra 
          },
+        
+                
+        { 
+         'title' : 'Metal Zone', 
+         'description' : 'Everything you need to sound exactly like Eddie Van Halen', 
+         'image_url' : 'https://i.imgur.com/jkeDHx3.jpeg', 
+         'start_bid' : 2.50, 
+         'listing_start' : datetime.now(), 
+         'listing_end' : datetime.now() + timedelta(days=7), 
+         'is_active': True,
+         'category_fk' : music,
+         'health_fk' : good, 
+         'user_fk' : turkle 
+         },
                         
         
     ]
